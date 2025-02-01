@@ -70,7 +70,7 @@ class Solution:
 * 4th method
     - This method is used to identify the iteration that takes place
       within the for loop
-    - This print table in stdoutput to identify the mistakes we done
+    - This prints table in output to identify the mistakes we done
       in the iteration
 #+begin_src python
 class Solution:
