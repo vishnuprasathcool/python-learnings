@@ -56,7 +56,7 @@ class Solution:
   - Uppercase letters ('A'–'Z') → indices 26–51
   - Digits ('0'–'9') → indices 52–61
 
-* 3rd methond
+* 3rd method
 
 
 #+begin_src python
