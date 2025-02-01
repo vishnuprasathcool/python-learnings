@@ -1,8 +1,10 @@
-*Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
-what is anagram?
+#+title: Valid anagram problem
+Given two strings s and t, return true if the two strings are anagrams
+of each other, otherwise return false.
+* what is anagram?
   - An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
 
-1st method
+* 1st method
 #+begin_src python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -17,14 +19,14 @@ class Solution:
                 return False
         return True
 #+end_src
-ord()
+** ord()
  - Python ord() function returns the Unicode code from a given character.
  - This function accepts a string of unit length as an argument and returns the Unicode equivalence of the passed argument.
 #+begin_example
    - ord(‘a’) returns the integer 97, ord(‘€’) (Euro sign) returns 8364
 #+end_example
 
-2nd method
+* 2nd method
 #+begin_src python
 class Solution:
     def get_index(self,ch):
@@ -46,21 +48,22 @@ class Solution:
                 return False
         return True
 #+end_src
-whats different in this method?
+** whats different in this method?
   - In this method the input can be lowercase,uppercase or numbers
- why get_index?
+** why get_index?
   - using get_index(ch) to map characters to indices:
   - Lowercase letters ('a'–'z') → indices 0–25
   - Uppercase letters ('A'–'Z') → indices 26–51
   - Digits ('0'–'9') → indices 52–61
 
-3rd methond
+* 3rd methond
 
-class Solution:
+
 #+begin_src python
-    def isAnagram(self, s: str, t: str) -> bool:
-        return Counter(s)==Counter(t)
+class Solution:
+   def isAnagram(self, s: str, t: str) -> bool:
+       return Counter(s)==Counter(t)
 #+end_src
-what is counter?
+** what is counter?
   - Counter is a sub-class that is used to count hashable objects.Counter is an unordered collection where elements are stored as Dict keys and their count as dict value.
 
