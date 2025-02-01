@@ -1,0 +1,60 @@
+Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
+what is anagram?
+ An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
+
+1st method
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if(len(s) != len(t)):
+            return False
+        charcount = [0]*26
+        for i in range(len(s)):
+            charcount[ord(s[i]) - ord('a')] += 1  
+            charcount[ord(t[i]) - ord('a')] -= 1
+        for count in charcount:
+            if(count!=0):
+                return False
+        return True
+
+ord()-Python ord() function returns the Unicode code from a given character. This function accepts a string of unit length as an argument and returns the Unicode equivalence of the passed argument.
+eg:ord(‘a’) returns the integer 97, ord(‘€’) (Euro sign) returns 8364
+
+2nd method
+
+class Solution:
+    def get_index(self,ch):
+         if 'a'<= ch <='z':
+            return ord(ch) - ord('a')
+         elif 'A'<= ch <='Z':
+            return ord(ch) - ord('A')+26
+         elif '0'<= ch <='9':
+            return ord(ch) - ord('0')+52
+    def isAnagram(self, s: str, t: str) -> bool:
+        if(len(s) != len(t)):
+            return False
+        charcount = [0]*62
+        for i in range(len(s)):
+            charcount[self.get_index(s[i])] += 1  
+            charcount[self.get_index(t[i])] -= 1
+        for count in charcount:
+            if(count!=0):
+                return False
+        return True
+
+whats different in this method?
+  In this method the input can be lowercase,uppercase or numbers
+ why get_index?
+  using get_index(ch) to map characters to indices:
+  Lowercase letters ('a'–'z') → indices 0–25
+  Uppercase letters ('A'–'Z') → indices 26–51
+  Digits ('0'–'9') → indices 52–61
+
+3rd methond
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s)==Counter(t)
+what is counter?
+  Counter is a sub-class that is used to count hashable objects.Counter is an unordered collection where elements are stored as Dict keys and their count as dict value.
+
