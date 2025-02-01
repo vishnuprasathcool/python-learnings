@@ -67,3 +67,35 @@ class Solution:
 ** what is counter?
   - Counter is a sub-class that is used to count hashable objects.Counter is an unordered collection where elements are stored as Dict keys and their count as dict value.
 
+* 4th method
+    - This method is used to identify the iteration that takes place
+      within the for loop
+    - This print table in stdoutput to identify the mistakes we done
+      in the iteration
+#+begin_src python
+class Solution:
+    def get_index(self,ch):
+         if 'a'<= ch <='z':
+            return ord(ch) - ord('a')
+         elif 'A'<= ch <='Z':
+            return ord(ch) - ord('A')+26
+         elif '0'<= ch <='9':
+            return ord(ch) - ord('0')+52
+    def isAnagram(self, s: str, t: str) -> bool:
+        if(len(s) != len(t)):
+            return False
+        print("length of s is",len(s))
+        print("length of t is",len(t))
+        charcount = [0]*62
+        for i in range(len(s)):
+            charcount[self.get_index(s[i])] += 1  
+            charcount[self.get_index(t[i])] -= 1
+            print("|",s[i],"|", "\t",end=" ")
+            print("|",t[i],"|")
+        for count in charcount:
+            if(count!=0):
+                return False
+        return True
+smp=Solution()
+print(smp.isAnagram("hello","elloh"))
+#+end_src
