@@ -99,3 +99,10 @@ class Solution:
 smp=Solution()
 print(smp.isAnagram("hello","elloh"))
 #+end_src
+ - This print statement is used to print the iteration of the for loop
+   or any iteration statement
+#+begin_example
+print("|",s[i],"|", "\t",end=" ")
+            print("|",t[i],"|")
+#+end_example
+
