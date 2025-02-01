@@ -1,19 +1,23 @@
 #+title: Finding duplicate problem
 
 * What is Set ?
-    Sets are used to store multiple items in a single variable.
+- Sets are used to store multiple items in a single variable.
+- Set is one of 4 built-in data types in Python used to store
+  collections of data, the other 3 are List, Tuple, and Dictionary,
+  all with different qualities and usage.
+- A set is a collection which is unordered, unchangeable*, and unindexed.
 
-    Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Tuple, and Dictionary, all with different qualities and usage.
-
-    A set is a collection which is unordered, unchangeable*, and unindexed.
 * Python code
+#+begin_src python
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
-        hashset = set()
-        for n in nums:
-            if n in hashset:
-                return True
-            else:
-                hashset.add(n)
-        return False
+  def hasDuplicate(self, nums: List[int]) -> bool:
+      hashset = set()
+      for n in nums:
+          if n in hashset:
+              return True
+          else:
+              hashset.add(n)
+      return False
+#+end_src
+
               
