@@ -1,0 +1,21 @@
+* Two sum
+** Dictionary
+   - Dictionaries are used to store data values in key:value pairs.
+
+   - A dictionary is a collection which is ordered, changeable and do not allow duplicates.
+
+** enumerate()
+   - enumerate() function adds a counter to each item in a list or other iterable
+
+** program
+#+beginsrc python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dictionary = {}
+        for i, n in enumerate(nums):
+            sub = target - n
+            if sub in dictionary:
+                return [dictionary[sub], i]
+            dictionary[n] = i
+        return []
+#+endsrc

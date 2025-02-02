@@ -105,4 +105,3 @@ print(smp.isAnagram("hello","elloh"))
 print("|",s[i],"|", "\t",end=" ")
             print("|",t[i],"|")
 #+end_example
-
